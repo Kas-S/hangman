@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import words from './wordList.json'
+import HangmanDrawing from "./HangmanDrawing.tsx";
+import HangmanWord from "./HangmanWord.tsx";
+import Keyboard from "./Keyboard.tsx";
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState(() => words[Math.floor(Math.random() * words.length)])
@@ -14,7 +17,9 @@ function App() {
       alignItems: 'center'
     }}>
       <div style={{fontSize: '2rem', textAlign: 'center'}}>Lose Win</div>
-
+      <HangmanDrawing />
+      <HangmanWord />
+      <Keyboard />
     </div>
   )
 }
