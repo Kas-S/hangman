@@ -1,6 +1,10 @@
-function HangmanWord() {
-    const word: string = "test"
-    const guessedLetters: string[] = []
+interface HangmanWordProps {
+    guessedLetters: string[],
+    wordToGuess: string
+}
+
+
+function HangmanWord({guessedLetters, wordToGuess}: HangmanWordProps) {
     return (
         <div style={{
             display: 'flex',
@@ -10,7 +14,7 @@ function HangmanWord() {
             textTransform: 'uppercase',
             fontFamily: 'monospace'
         }}>
-            { word.split("").map((letter, i)=> (
+            { wordToGuess.split("").map((letter, i)=> (
                 <span style={{borderBottom: ".1em solid black"}} key={i}>
                     <span style={{
                         visibility: guessedLetters.includes(letter) ? "visible" : "hidden"
