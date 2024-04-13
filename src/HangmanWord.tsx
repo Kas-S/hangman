@@ -1,5 +1,5 @@
 function HangmanWord() {
-    const word = "test"
+    const word: string = "test"
     const guessedLetters: string[] = []
     return (
         <div style={{
